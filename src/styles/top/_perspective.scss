@@ -3,11 +3,8 @@
   background-color: orange;
   perspective: 1500px;
 
-  // モバイル時にナビゲーションが右にはみ出て余白ができるので
-  // 余白ができないようにする
-  width: 100vw;
-  overflow: hidden;
   &.is-active {
+    overflow: hidden;
     & .perspective__main {
       height: 100vh;
       overflow: hidden;
@@ -28,7 +25,8 @@
   &__nav {
     position: absolute;
     top: 50%;
-    left: 60%;
-    transform: translate(0, -50%);
+    right: 10%;
+    width: 17%;
+    transform: translate(-50%, -50%);
   }
 }
