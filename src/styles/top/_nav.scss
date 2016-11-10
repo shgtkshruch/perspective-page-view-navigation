@@ -10,6 +10,7 @@
     transition-duration: .3s;
     transform: translateX(100%);
     opacity: 0;
+    font-size: 23px;
     @for $i from 1 through 7 {
       &:nth-child(#{$i}) {
         transition-delay: .2s  + .075s * $i;
