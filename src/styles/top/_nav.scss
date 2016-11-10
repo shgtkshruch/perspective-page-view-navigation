@@ -1,0 +1,19 @@
+.nav {
+  &.is-active {
+    & .nav__item {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  &__item {
+    transition-property: transform, opacity;
+    transition-duration: .3s;
+    transform: translateX(100%);
+    opacity: 0;
+    @for $i from 1 through 7 {
+      &:nth-child(#{$i}) {
+        transition-delay: .2s  + .075s * $i;
+      }
+    }
+  }
+}

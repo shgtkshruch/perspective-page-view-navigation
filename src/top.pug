@@ -4,4 +4,27 @@ block title
   title perspective-page-view-navigation
 
 block body
-  h1 Create your site
+  .perspective
+    .perspective__main
+      .perspective__inner
+        .l-container
+          h1 Perspective Navigation
+          - var i = 0;
+          - var sectionNum = 7;
+          while i < sectionNum
+            section
+              h2(id=`section-${i+1}`)
+                | Section
+                = i + 1
+              img(src="https://source.unsplash.com/category/nature/600x400" width="600" height="400")
+              p Dolor saepe natus dolorem animi asperiores error Soluta enim doloribus fugit aperiam dolorum dolorem. Rem at iure magnam doloribus porro? Modi ducimus libero ex culpa consectetur? Ut nihil hic rem?
+            - i++;
+    .perspective__nav.nav
+      ul
+        - var i = 0;
+        while i < sectionNum
+          li.nav__item
+            a.nav__link(href=`#section-${i+1}`)
+              | Section
+              = i+ 1
+          - i++;

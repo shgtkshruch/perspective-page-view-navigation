@@ -1,0 +1,29 @@
+.perspective {
+  position: relative;
+  background-color: orange;
+  perspective: 1500px;
+  &.is-active {
+    & .perspective__main {
+      height: 100vh;
+      overflow: hidden;
+
+      transform: translateZ(-1800px) translateX(-50%) rotateY(45deg);
+    }
+  }
+  &__main {
+    height: 100vh;
+    background-color: #fff;
+
+    position: relative;
+    z-index: 1;
+
+    transition: transform .3s;
+    transform: translateZ(0) translateX(0) rotateY(0);
+  }
+  &__nav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(0, -50%);
+  }
+}
