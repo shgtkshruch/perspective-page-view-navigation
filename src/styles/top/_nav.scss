@@ -1,5 +1,8 @@
 .nav {
+  display: inline-block;
+  transition: transform .3s;
   &.is-active {
+    transform: translateX(100%);
     & .nav__item {
       opacity: 1;
     }
