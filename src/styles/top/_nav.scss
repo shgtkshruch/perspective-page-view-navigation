@@ -1,20 +1,25 @@
 .nav {
-  display: inline-block;
   transition: transform .3s;
+  overflow: hidden;
   &.is-active {
-    transform: translateX(100%);
     & .nav__item {
       opacity: 1;
+      transform: translateX(0) translateZ(0);
     }
   }
   &__item {
     transition-property: transform, opacity;
     transition-duration: .3s;
     opacity: 0;
+    transform: translateX(350px) translateZ(-1000px);
+
+    margin-bottom: 1rem;
     font-size: 23px;
+    letter-spacing: .05em;
+    color: #fff;
     @for $i from 1 through 7 {
       &:nth-child(#{$i}) {
-        transition-delay: .2s  + .075s * $i;
+        transition-delay: .1s  + .075s * $i;
       }
     }
   }
