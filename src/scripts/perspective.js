@@ -7,6 +7,7 @@
   const $content = $('.perspective__main');
   const $contentInner = $('.perspective__inner');
   const $nav = $('.nav');
+  const $navItems = $('.nav__item');
 
   const activeClass = 'is-active';
   const duration = 300;
@@ -36,6 +37,8 @@
       // ナビゲーションを開いたスクロール位置に戻す *4
       $window.scrollTop(scrollPositon);
 
+      $navItems.css({ transform: 'translateX(0)' });
+
     }, duration);
   }
 
@@ -50,6 +53,11 @@
 
     // スクロールしていた場所でアニメーションさせる *3
     $contentInner.css({ transform: `translateY(-${scrollPositon}px)` });
+
+    // ナビゲーションに右から現れるアニメーションをさせるために、
+    // 位置を右に移す
+    $navItems
+      .css({ transform: 'translateX(-100%)' })
   }
 
   $('.nav__link').click(function (e) {
