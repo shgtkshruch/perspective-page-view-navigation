@@ -2,5 +2,14 @@
   &-container {
     max-width: 600px;
     margin: 0 auto;
+    &--hamburger {
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      text-align: right;
+      z-index: 2;
+    }
   }
 }

@@ -7,14 +7,24 @@
   const $content = $('.perspective__main');
   const $contentInner = $('.perspective__inner');
   const $nav = $('.nav');
+  const $icon = $('.hamburger');
 
   const activeClass = 'is-active';
   const duration = 300;
 
   let scrollPositon;
 
-  $content.click(() => {
-    $rootElement.hasClass(activeClass) ? closeNavigation() : openNavigation();
+  $content.click(e => {
+    if ($rootElement.hasClass(activeClass)) {
+      closeNavigation();
+    }
+  });
+
+  $icon.click(function(e) {
+    openNavigation();
+
+    // ハンバーガーアイコンを隠す *5
+    $(this).hide();
   });
 
   function closeNavigation() {
@@ -35,6 +45,9 @@
 
       // ナビゲーションを開いたスクロール位置に戻す *4
       $window.scrollTop(scrollPositon);
+
+    // ハンバーガーアイコンを表示する *5
+      $icon.fadeIn();
 
     }, duration);
   }

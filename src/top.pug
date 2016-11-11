@@ -4,11 +4,16 @@ block title
   title perspective-page-view-navigation
 
 block body
+  .l-container.l-container--hamburger
+    button.hamburger(type="button")
+      span.hamburger__bar
+
   .perspective
     .perspective__main
       .perspective__inner
+
         .l-container
-          h1 Perspective Navigation
+          h1 Responsive Perspective Navigation
           - var i = 0;
           - var sectionNum = 7;
           while i < sectionNum
@@ -29,3 +34,4 @@ block body
                 | Section
                 = i+ 1
             - i++;
+
